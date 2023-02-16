@@ -2,3 +2,7 @@
 .sw?
 __pycache__/
 *.pyc
+flynn.egg-info
+build
+dist
+.pytest_cache

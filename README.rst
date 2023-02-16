@@ -1,4 +1,4 @@
-Flynn - Simple CBOR En/Decoder
+Flynn - Simple CBOR En/Decoder (version modified to work with CircuitPython)
 ##############################
 
 Flynn is also a Python library providing CBOR [RFC7049] encoding and decoding with a

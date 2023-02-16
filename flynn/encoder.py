@@ -1,15 +1,9 @@
 # coding: utf-8
 
 import io
-import sys
 import struct
 
-if sys.version_info[0] == 2:
-	import collections as abc
-	_integer_types = (int, long)
-else:
-	import collections.abc as abc
-	_integer_types = (int, )
+_integer_types = (int, )
 
 _str_type = type(u"")
 _bytes_type = type(b"")
@@ -41,12 +35,12 @@ class Encoder(object):
 			self.encode_integer(object)
 		elif isinstance(object, flynn.data.Tagging):
 			self.encode_tagging(object)
+		elif isinstance(object, tuple):
+			self.encode_infinite_list(object)
 		elif object is flynn.data.Undefined:
 			self.encode_undefined()
 		elif object is None:
 			self.encode_null()
-		elif isinstance(object, abc.Iterable):
-			self.encode_infinite_list(object)
 		else:
 			raise EncoderError("Object of type {} is not serializable".format(type(object)))
 

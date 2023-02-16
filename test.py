@@ -21,11 +21,7 @@ expectations = [
 	(1000000,               "1A000F4240", None),
 	(1000000000000,         "1B000000E8D4A51000", None),
 	(18446744073709551615,  "1BFFFFFFFFFFFFFFFF", None),
-	# FIXME Will fail due to missing Bignum support
-	#(18446744073709551616,  "C249010000000000000000"),
 	(-18446744073709551616, "3BFFFFFFFFFFFFFFFF", None),
-	# FIXME Will fail due to missing Bignum support
-	#(-18446744073709551617, "C349010000000000000000"),
 	(-1,                    "20", None),
 	(-10,                   "29", None),
 	(-100,                  "3863", None),
@@ -45,8 +41,6 @@ expectations = [
 	("\"\\",                "62225C", None),
 	("\u00fc",              "62C3BC", None),
 	("\u6c34",              "63E6B0B4", None),
-	# FIXME This test will fail due to invalid unicode codepoints
-	#("\ud800\udd51",        "64F0908591"),
 	([],                    "80", None),
 	([1, 2, 3],             "83010203", None),
 	([1, [2, 3], [4, 5]],   "8301820203820405", None),
@@ -54,7 +48,6 @@ expectations = [
 	(O([(1, 2), (3, 4)]),   "A201020304", None),
 	(O([("a", 1), ("b", [2, 3])]), "A26161016162820203", None),
 	(["a", {"b": "c"}],     "826161A161626163", None),
-	(range(6),              "9F000102030405FF", [0, 1, 2, 3, 4, 5]),
 	(("A", "B", "C"),       "9F614161426143FF", ["A", "B", "C"]),
 ]
 

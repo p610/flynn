@@ -1,6 +1,9 @@
 # coding: utf-8
 
-import base64
+try:
+	import base64
+except:
+	import circuitpython_base64 as base64
 
 import flynn.decoder
 import flynn.encoder
